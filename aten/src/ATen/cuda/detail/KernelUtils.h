@@ -19,7 +19,9 @@ namespace at { namespace cuda { namespace detail {
   for (int i=_i_n_d_e_x; _i_n_d_e_x < (n); _i_n_d_e_x+=blockDim.x * gridDim.x, i=_i_n_d_e_x)
 
 // Use 1024 threads per block, which requires cuda sm_2x or above
-constexpr int CUDA_NUM_THREADS = 1024;
+//constexpr int CUDA_NUM_THREADS = 1024;
+//
+constexpr int CUDA_NUM_THREADS = 512;
 
 // CUDA: number of blocks for threads.
 inline int GET_BLOCKS(const int N)
